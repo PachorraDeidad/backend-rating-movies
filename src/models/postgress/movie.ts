@@ -8,7 +8,7 @@ export class MovieModel {
     SELECT id, title, overview, release_date, popularity, vote_average, vote_count, poster_path, backdrop_path, original_language 
     FROM movies 
     WHERE id>499 
-    ORDER BY id LIMIT 10`
+    ORDER BY id LIMIT 21`
 
     return movies
   }
