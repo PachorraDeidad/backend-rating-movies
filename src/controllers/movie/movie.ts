@@ -15,4 +15,15 @@ export class MovieController {
       console.log(error)
     }
   }
+
+  movieById = async (req: Request, res: Response): Promise<void> => {
+    const { id } = req.params
+    try {
+      const movie = await this.MovieModel.getById(id)
+
+      res.status(200).json(movie)
+    } catch (error) {
+      res.status(500).send({ message: 'something was wrong' })
+    }
+  }
 }
